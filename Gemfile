@@ -47,3 +47,5 @@ group :development do
 end
 
 gem 'http'
+
+gem 'rack-cors'
