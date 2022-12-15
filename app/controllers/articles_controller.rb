@@ -3,6 +3,10 @@ class ArticlesController < ApplicationController
     key = Rails.application.credentials.news_api[:api_key]
 
     response = HTTP.get("https://newsapi.org/v2/everything?q=cybersecurity&apiKey=#{key}")
-    render json: response.parse(:json)
+
+    cyber_data = response.parse(:json)
+    articles = cyber_data["articles"]
+
+    render json: articles
   end
 end
